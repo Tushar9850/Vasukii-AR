@@ -1,0 +1,9 @@
+{
+  "appId": "com.vasukii.ar",
+  "appName": "Vasukii AR",
+  "webDir": "www",
+  "backgroundColor": "#0A1C13",
+  "android": {
+    "allowMixedContent": false
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "pots": [
+    {
+      "id": "terracotta",
+      "label": "Terracotta",
+      "hex": "#B5603A"
+    },
+    {
+      "id": "cream",
+      "label": "Cream",
+      "hex": "#EFE8D8"
+    },
+    {
+      "id": "charcoal",
+      "label": "Charcoal",
+      "hex": "#2B2F2C"
+    }
+  ],
+  "sizes": [
+    {
+      "id": "S",
+      "label": "Small"
+    },
+    {
+      "id": "M",
+      "label": "Medium"
+    },
+    {
+      "id": "L",
+      "label": "Large"
+    }
+  ],
+  "plants": [
+    {
+      "id": "snake",
+      "name": "Snake Plant",
+      "latin": "Sansevieria trifasciata",
+      "blurb": "Tough, low-light friendly and almost impossible to kill. A great first plant.",
+      "light": "Low to bright",
+      "water": "Every 2-3 weeks",
+      "heightsCm": {
+        "S": 50,
+        "M": 72,
+        "L": 97
+      },
+      "widthsCm": {
+        "S": 22,
+        "M": 31,
+        "L": 42
+      }
+    },
+    {
+      "id": "monstera",
+      "name": "Monstera",
+      "latin": "Monstera deliciosa",
+      "blurb": "Big split leaves that make a statement in any living room.",
+      "light": "Bright indirect",
+      "water": "Weekly",
+      "heightsCm": {
+        "S": 65,
+        "M": 93,
+        "L": 125
+      },
+      "widthsCm": {
+        "S": 54,
+        "M": 78,
+        "L": 105
+      }
+    },
+    {
+      "id": "succulent",
+      "name": "Echeveria Succulent",
+      "latin": "Echeveria elegans",
+      "blurb": "A compact rosette for desks, shelves and sunny windowsills.",
+      "light": "Bright / direct",
+      "water": "Every 2 weeks",
+      "heightsCm": {
+        "S": 7,
+        "M": 10,
+        "L": 14
+      },
+      "widthsCm": {
+        "S": 11,
+        "M": 16,
+        "L": 22
+      }
+    },
+    {
+      "id": "rubber",
+      "name": "Rubber Plant",
+      "latin": "Ficus elastica",
+      "blurb": "Glossy dark leaves on a tall, elegant stem. Fills a corner beautifully.",
+      "light": "Bright indirect",
+      "water": "Every 1-2 weeks",
+      "heightsCm": {
+        "S": 66,
+        "M": 94,
+        "L": 127
+      },
+      "widthsCm": {
+        "S": 26,
+        "M": 36,
+        "L": 49
+      }
+    }
+  ]
+}
