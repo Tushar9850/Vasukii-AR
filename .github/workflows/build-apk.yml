@@ -1,0 +1,57 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Copy web assets and sync Capacitor
+        run: npm run sync
+
+      - name: Build debug APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Name the APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk vasukii-ar-debug.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vasukii-ar-debug-apk
+          path: vasukii-ar-debug.apk
+
+      # A stable download link you can open directly on your phone:
+      # https://github.com/<owner>/<repo>/releases/tag/latest
+      - name: Publish to the "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest vasukii-ar-debug.apk \
+            --title "Vasukii AR - latest test build" \
+            --notes "Debug APK built from ${GITHUB_SHA::7}. Install on an ARCore-supported Android phone." \
+            --prerelease
